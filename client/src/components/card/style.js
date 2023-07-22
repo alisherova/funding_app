@@ -5,8 +5,10 @@ export const CardWrapper = styled(Link)`
   max-width: 350px;
   height: 500px;
   width: 30%;
-  background-color: whitesmoke;
+  background-color: white;
   border-radius: 12px;
+  border: 1px solid gainsboro;
+  box-shadow: 2px 2px 10px 2px rgba(134, 130, 130, 0.51);
   cursor: pointer;
   color: unset;
   text-decoration: none;

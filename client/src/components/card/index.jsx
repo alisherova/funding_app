@@ -4,31 +4,13 @@ import Button from '../button'
 import { usePosts } from '../../hooks'
 import { FiUsers } from 'react-icons/fi'
 import { AiOutlineClockCircle } from 'react-icons/ai'
+import { getLeftPercent, getLeftDate } from '../../utils/index.js'
 const Card = () => {
 
   const { data, isLoading } = usePosts()
 
   if (isLoading) {
     return <p>Loading...</p>
-  }
-
-  const getLeftDate = (lastDay) => {
-    let currentDate = new Date()
-    let splittedDate = lastDay.split('T')[0]
-    let pureDate = new Date(splittedDate)
-    const timeDifference = Math.abs(pureDate - currentDate);
-    const daysRemaining = Math.ceil(timeDifference / (1000 * 60 * 60 * 24));
-    return daysRemaining;
-  }
-
-  const getLeftPercent = (funded, total) => {
-    let totalLiabilites = String(funded);
-    let toalAssets = String(total);
-    let pattern = /[^0-9.-]+/g;
-
-    let result = parseFloat(toalAssets.replace(pattern, '')) /
-      parseFloat(totalLiabilites.replace(pattern, ''));
-    return (Math.ceil(Number(result) * 100));
   }
 
   return (

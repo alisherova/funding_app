@@ -1,9 +1,9 @@
 import React from 'react'
 import { SupportBtn } from './style'
 
-const Button = () => {
+const Button = ({ padding = "" }) => {
     return (
-        <SupportBtn>Support</SupportBtn>
+        <SupportBtn padding={padding}>Support</SupportBtn>
     )
 }
 
